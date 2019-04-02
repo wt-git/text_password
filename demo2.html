@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=8"> -->
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'password';
+            src: url('./Password.eot');
+            /*ie9*/
+            src: url('./Password.eot?#iefix') format('embedded-opentype'),
+                /*ie8*/
+                url('./Password.ttf') format('truetype');
+            /*非ie*/
+        }
+
+        .face-text {
+            font-family: 'password';
+            ime-mode: disabled;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <form action="" >
+
+        <!-- 正常框 -->
+        <input id="text" class="face-text" type="text" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')">
+
+        <input id="sub" type="submit">
+    </form>
+
+
+
+
+    <script>
+        // 测试拿出文本框的值
+        var dom_sub = document.getElementById("sub");
+        dom_sub.onclick = function(){
+            var dom_text = document.getElementById("text");
+            var vals = dom_text.value;
+            alert(vals);
+            return false;
+        }
+
+    
+    </script>
+</body>
+
+</html>
